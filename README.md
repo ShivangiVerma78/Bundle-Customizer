@@ -1,78 +1,89 @@
-# Shopify App Template - Extension only
+# 🛒 Shopify Bundle Builder (Cart Customizer)
 
-This is a template for building an [extension-only Shopify app](https://shopify.dev/docs/apps/build/app-extensions/build-extension-only-app). It contains the basics for building a Shopify app that uses only app extensions.
+A custom **Shopify Bundle Builder** extension that allows users to create personalized product bundles directly from the storefront. Built using **Shopify Functions (Cart Transform API)** and a dynamic UI section for seamless bundle creation.
 
-This template doesn't include a server or the ability to embed a page in the Shopify Admin. If you want either of these capabilities, choose the [Remix app template](https://github.com/Shopify/shopify-app-template-remix) instead.
+---
 
-Whether you choose to use this template or another one, you can use your preferred package manager and the Shopify CLI with [these steps](#installing-the-template).
+## 🎥 Demo Preview
 
-## Benefits
+<p align="center">
+  <img src="/section.png" alt="Shopify Bundle Builder Demo" width="800"/>
+</p>
+<p align="center">
+  <img src="/page.png.png" alt="Shopify Bundle Builder Demo" width="800"/>
+</p>
+<p align="center">
+  <img src="/checkout.png" alt="Shopify Bundle Builder Demo" width="800"/>
+</p>
 
-Shopify apps are built on a variety of Shopify tools to create a great merchant experience. The [create an app](https://shopify.dev/docs/apps/getting-started/create) tutorial in our developer documentation will guide you through creating a Shopify app.
+---
 
-This app template does little more than install the CLI and scaffold a repository.
+## ✨ Features
 
-## Getting started
+- 🧩 Create custom product bundles
+- 📦 Select products from multiple collections (tab-based UI)
+- 🎯 Configurable bundle size (e.g., pick any 3 items)
+- 💰 Dynamic pricing calculation
+- 🚚 Free shipping threshold indicator
+- ❌ Add / Remove items from bundle
+- 🛍️ Single-click "Add Bundle to Cart"
+- ⚡ Powered by **Shopify Cart Transform Function**
+- 🎛️ Fully configurable via Shopify Theme Editor
 
-### Requirements
+---
 
-1. You must [download and install Node.js](https://nodejs.org/en/download/) if you don't already have it.
-1. You must [create a Shopify partner account](https://partners.shopify.com/signup) if you don’t have one.
-1. You must create a store for testing if you don't have one, either a [development store](https://help.shopify.com/en/partners/dashboard/development-stores#create-a-development-store) or a [Shopify Plus sandbox store](https://help.shopify.com/en/partners/dashboard/managing-stores/plus-sandbox-store).
+## 🖥️ Demo Overview
 
-### Installing the template
+### Bundle Builder UI
+- Tab-based collection selection  
+- Product grid with "Add to Bundle" CTA  
 
-This template can be installed using your preferred package manager:
+### Bundle Summary Panel
+- Selected items preview  
+- Dynamic total price  
+- Progress bar for threshold (e.g., free shipping)  
 
-Using yarn:
+### Checkout Integration
+- Bundle appears as a grouped item in checkout via cart transformation  
 
-```shell
-yarn create @shopify/app
-```
+---
 
-Using npm:
+## 🏗️ Tech Stack
 
-```shell
-npm init @shopify/app@latest
-```
+- **Shopify Liquid** – UI rendering  
+- **JavaScript (Vanilla)** – State management & interactions  
+- **Shopify Functions** – Cart Transform API  
+- **CSS** – Custom styling  
+- **Shopify Sections** – Drag & drop configurability  
 
-Using pnpm:
+---
 
-```shell
-pnpm create @shopify/app@latest
-```
+## ⚙️ Configuration (Theme Editor)
 
-This will clone the template and install the required dependencies.
+The section provides the following customizable settings:
 
-#### Local Development
+| Setting | Description |
+|--------|-------------|
+| Bundle Title | Heading text |
+| Bundle Size | Number of items allowed |
+| Price Limit | Threshold for rewards (e.g., free shipping) |
+| Button Text | CTA button label |
+| Reached Message | Message when threshold is met |
+| Below Limit Message | Message before threshold |
+| Products per page | Grid control |
 
-[The Shopify CLI](https://shopify.dev/docs/apps/tools/cli) connects to an app in your Partners dashboard. It provides environment variables and runs commands in parallel.
+---
 
-You can develop locally using your preferred package manager. Run one of the following commands from the root of your app.
+## 🔄 How It Works
 
-Using yarn:
+1. User selects products from collection tabs  
+2. Items are added to bundle container (client-side state)  
+3. Total price updates dynamically  
+4. On clicking **Add Bundle to Cart**:
+   - Bundle payload is sent to cart  
+   - **Cart Transform Function** groups items  
+5. Bundle appears as a single logical unit in checkout  
 
-```shell
-yarn dev
-```
+---
 
-Using npm:
-
-```shell
-npm run dev
-```
-
-Using pnpm:
-
-```shell
-pnpm run dev
-```
-
-Open the URL generated in your console. Once you grant permission to the app, you can start development (such as generating extensions).
-
-## Developer resources
-
-- [Introduction to Shopify apps](https://shopify.dev/docs/apps/getting-started)
-- [App extensions](https://shopify.dev/docs/apps/build/app-extensions)
-- [Extension only apps](https://shopify.dev/docs/apps/build/app-extensions/build-extension-only-app)
-- [Shopify CLI](https://shopify.dev/docs/apps/tools/cli)
+## 📁 Project Structure
