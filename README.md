@@ -10,7 +10,7 @@ A custom **Shopify Bundle Builder** extension that allows users to create person
   <img src="/section.png" alt="Shopify Bundle Builder Demo" width="800"/>
 </p>
 <p align="center">
-  <img src="/page.png.png" alt="Shopify Bundle Builder Demo" width="800"/>
+  <img src="/page.png" alt="Shopify Bundle Builder Demo" width="800"/>
 </p>
 <p align="center">
   <img src="/checkout.png" alt="Shopify Bundle Builder Demo" width="800"/>
